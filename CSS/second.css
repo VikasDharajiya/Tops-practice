@@ -1,0 +1,24 @@
+.box{
+  color: blue;
+  background-color: antiquewhite;
+  height: 60px;
+  width: 60px;
+  border: solid 2px red;
+  height: 100px;
+  width: 200px;
+  /* left right center justify */
+  text-align: justify;
+}
+
+a{
+  text-transform: capitalize;
+  text-decoration: underline dotted green;
+  /* text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: black;
+  text-decoration-thickness: 3px; */
+}
+p{
+  text-indent: 10px;
+  line-height: 20px;
+}
