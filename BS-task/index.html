@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eflyer</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="banner-bg">
+      <!-- ================= TOP BAR (Only Desktop) ================ -->
+      <div class="container">
+        <div class="topbar d-none d-md-flex justify-content-center">
+          <ul class="mb-0">
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Gift Ideas</a></li>
+            <li><a href="#">New Releases</a></li>
+            <li><a href="#">Today's Deals</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        href="#"
+        class="logo d-flex align-items-center justify-content-center p-4"
+      >
+        <img src="./images/logo.png" alt="Logo" />
+      </a>
+
+      <!-- MAIN NAVIGATION AREA  -->
+      <div class="container py-3">
+        <div
+          class="row align-items-center justify-content-center d-none d-md-flex"
+        >
+          <!-- Hamburger -->
+          <div class="col-auto">
+            <img
+              src="images/toggle-icon.png"
+              width="40"
+              style="cursor: pointer"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileMenu"
+            />
+          </div>
+
+          <!-- All Category -->
+          <div class="col-auto">
+            <div class="dropdown">
+              <button
+                class="btn btn-dark dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                All Category
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Electronics</a></li>
+                <li><a class="dropdown-item" href="#">Fashion</a></li>
+                <li><a class="dropdown-item" href="#">Jewellery</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Search -->
+          <div class="col">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search..." />
+              <button class="btn btn-orange">
+                <img src="images/search-icon.png" width="17" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Language Dropdown -->
+          <div class="col-auto">
+            <div class="dropdown">
+              <button
+                class="btn btn-light dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <img src="images/flag-uk.png" width="15" /> English
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item">
+                    <img src="images/flag-france.png" /> France
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cart + User -->
+          <div class="col-auto">
+            <ul class="d-flex align-items-center gap-4 mb-0 nav-icons">
+              <li>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-user"></i> User</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--  MOBILE: LANGUAGE + CART/USER -->
+        <div class="row d-md-none mb-3">
+          <div class="col-6 d-flex justify-content-start">
+            <div class="dropdown">
+              <button
+                class="btn btn-light dropdown-toggle p-2"
+                data-bs-toggle="dropdown"
+              >
+                <img src="images/flag-uk.png" width="15" /> English
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item">
+                    <img src="images/flag-france.png" /> France
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-6 d-flex justify-content-end">
+            <ul class="d-flex align-items-center gap-3 mb-0">
+              <li>
+                <a href="#" class="text-white"
+                  ><i class="fa-solid fa-cart-shopping"></i> Cart</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white"
+                  ><i class="fa-solid fa-user"></i> User</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MOBILE: HAMBURGER + SEARCH   -->
+        <div class="row d-md-none g-0">
+          <!-- Hamburger -->
+          <div class="row d-md-none gx-0 gy-0 my-0">
+            <div class="col-3 d-flex justify-content-start p-0 m-0">
+              <img
+                src="images/toggle-icon.png"
+                width="40"
+                class="hamburger-img"
+              />
+            </div>
+
+            <div class="col-9 p-0 m-0">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                />
+                <button class="btn btn-orange">
+                  <img src="images/search-icon.png" width="17" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /container -->
+
+      <!-- slider-->
+      <div
+        id="heroCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+      >
+        <!-- Arrows -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div
+              class="hero-slide text-center d-flex flex-column justify-content-center align-items-center"
+            >
+              <h1
+                class="fw-bold text-white display-3 display-md-4 display-sm-5"
+              >
+                GET START <br />
+                YOUR FAVOURITE SHOPPING
+              </h1>
+
+              <a href="#" class="buy-btn btn btn-dark px-4 py-2 mt-3"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div
+              class="hero-slide text-center d-flex flex-column justify-content-center align-items-center"
+            >
+              <h1
+                class="fw-bold text-white display-3 display-md-4 display-sm-5"
+              >
+                BIG DISCOUNTS <br />
+                ON TOP BRANDS
+              </h1>
+
+              <a href="#" class="buy-btn btn btn-dark px-4 py-2 mt-3"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div
+              class="hero-slide text-center d-flex flex-column justify-content-center align-items-center"
+            >
+              <h1
+                class="fw-bold text-white display-3 display-md-4 display-sm-5"
+              >
+                NEW ARRIVALS <br />
+                EVERY SINGLE DAY
+              </h1>
+
+              <a href="#" class="buy-btn btn btn-dark px-4 py-2 mt-3"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /banner-bg -->
+    <!-- fashion -->
+    <div class="container my-4">
+      <div class="section-title fw-bold text-center mb-4">
+        <h1>Men & Women Fashion</h1>
+      </div>
+
+      <div
+        id="fashionCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+      >
+        <div class="carousel-inner">
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/shirt.avif" class="img-fluid" />
+                  <h4>Men Shirt</h4>
+                  <p>$45.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/w-dress.avif" class="img-fluid" />
+                  <h4>Women Dress</h4>
+                  <p>$60.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jacket.avif" class="img-fluid" />
+                  <h4>Jacket</h4>
+                  <p>$80.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/t-shirt.avif" class="img-fluid" />
+                  <h4>T-shirt</h4>
+                  <p>$35.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/w-bag3.avif" class="img-fluid" />
+                  <h4>Women Bag</h4>
+                  <p>$70.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="/images/hoodie.avif" class="img-fluid" />
+                  <h4>Hoodie</h4>
+                  <p>$55.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARROWS -->
+
+        <div class="fashion-arrows d-flex justify-content-center mt-4">
+          <button
+            class="custom-arrow me-3"
+            type="button"
+            data-bs-target="#fashionCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="custom-arrow ms-3"
+            type="button"
+            data-bs-target="#fashionCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Electronics-->
+    <div class="container my-4">
+      <div class="section-title fw-bold text-center mb-4">
+        <h1>Electronics</h1>
+      </div>
+
+      <div
+        id="electronicsCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
+      >
+        <div class="carousel-inner">
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/headphone.avif" class="img-fluid" />
+                  <h4>Headphone</h4>
+                  <p>$65.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/watch.avif" class="img-fluid" />
+                  <h4>Watch</h4>
+                  <p>$50.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/laptop1.avif" class="img-fluid" />
+                  <h4>Laptop</h4>
+                  <p>$800.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/speaker.avif" class="img-fluid" />
+                  <h4>Speaker</h4>
+                  <p>$315.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/keyboard.avif" class="img-fluid" />
+                  <h4>Keyboard</h4>
+                  <p>$40.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="/images/mobile-1.avif" class="img-fluid" />
+                  <h4>Mobile</h4>
+                  <p>$855.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARROWS -->
+
+        <div class="fashion-arrows d-flex justify-content-center mt-4">
+          <button
+            class="custom-arrow me-3"
+            type="button"
+            data-bs-target="#electronicsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="custom-arrow ms-3"
+            type="button"
+            data-bs-target="#electronicsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Jewellery Accessories-->
+    <div class="container my-4">
+      <div class="section-title fw-bold text-center mb-4">
+        <h1>Jewellery Accessories</h1>
+      </div>
+
+      <div
+        id="jwellaryCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2500"
+      >
+        <div class="carousel-inner">
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jw1.avif" class="img-fluid" />
+                  <h4>Golden-chain</h4>
+                  <p>$350.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jw2.avif" class="img-fluid" />
+                  <h4>Jumkha</h4>
+                  <p>$530.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jw3.avif" class="img-fluid" />
+                  <h4>Earring</h4>
+                  <p>$180.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jw4.avif" class="img-fluid" />
+                  <h4>Bengels</h4>
+                  <p>$1125.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="images/jw5.avif" class="img-fluid" />
+                  <h4>Necklaces</h4>
+                  <p>$40.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="fashion-card">
+                  <img src="/images/jw6.avif" class="img-fluid" />
+                  <h4>Silver chain</h4>
+                  <p>$1855.00</p>
+                  <a href="#" class="btn btn-buy btn-dark btn-sm px-3"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARROWS -->
+
+        <div class="fashion-arrows d-flex justify-content-center mt-4">
+          <button
+            class="custom-arrow me-3"
+            type="button"
+            data-bs-target="#jwellaryCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="custom-arrow ms-3"
+            type="button"
+            data-bs-target="#jwellaryCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--  OFFCANVAS SIDEBAR  -->
+    <div class="offcanvas offcanvas-start offcanvas-dark" id="mobileMenu">
+      <div class="offcanvas-header">
+        <h5 class="mb-0"></h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white close-btn"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">Electronics</a></li>
+          <li><a href="#">Jewellery</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="loader"></div>
+
+    <footer class="ef-footer">
+      <div class="container text-center">
+        <h2 class="footer-logo">Eflyer</h2>
+
+      
+        <div class="footer-email">
+          <input type="email" placeholder="Your Email" class="footer-input" />
+          <button class="footer-subscribe">SUBSCRIBE</button>
+        </div>
+
+        
+        <ul class="footer-links">
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Gift Ideas</a></li>
+          <li><a href="#">New Releases</a></li>
+          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Customer Service</a></li>
+        </ul>
+
+        <p class="help-line">Help Line Number : <span>+1 1800 1200 1200</span></p>
+
+        <p class="copyright">
+          © 2020 All Rights Reserved. Design by Free html Templates
+        </p>
+      </div>
+    </footer>
+
+    <script src="/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

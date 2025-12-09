@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let no = prompt("enter no");
+      let original = no;
+
+      let rev = 0;
+
+      while (no > 0) {
+        let digit = no % 10;
+        rev = rev * 10 + digit;
+        no = Math.floor(no / 10);
+      }
+
+      document.write("Original: " + original);
+      document.write("<br>Reverse: " + rev);
+
+      if (original == rev) {
+        document.write("<br>It is Palindrome");
+      } else {
+        document.write("<br>It is NOT Palindrome");
+      }
+    </script>
+  </body>
+</html>

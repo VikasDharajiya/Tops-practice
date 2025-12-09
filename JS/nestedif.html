@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // max out of 4 number
+      let a = parseInt(prompt("enter a:"));
+      let b = parseInt(prompt("enter b:"));
+      let c = parseInt(prompt("enter c:"));
+      let d = parseInt(prompt("enter d:"));
+
+      if (a > b) {
+        if (a > c) {
+          if (a > d) {
+            document.write("<br> a is max");
+          } else {
+            document.write("<br> d is max");
+          }
+        } else {
+          if (c > d) {
+            document.write("<br> c is max");
+          } else {
+            document.write("<br> d is max");
+          }
+        }
+      } else {
+        if (b > c) {
+          if (b > d) {
+            document.write("<br> b is max");
+          } else {
+            document.write("<br> d is max");
+          }
+        } else {
+          if (c > d) {
+            document.write("<br> c is max");
+          } else {
+            document.write("<br> d is max");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

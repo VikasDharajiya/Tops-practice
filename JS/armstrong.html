@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let no = 153;
+      let original = no;
+
+      let sum = 0;
+      let count = 0;
+
+      while (no > 0) {
+        let digit = no % 10;
+        sum += digit ** 3;
+        no = Math.floor(no / 10);
+      }
+      document.write("<br>No is " + original);
+      document.write("<br>sum is " + sum);
+      if (original == sum) {
+        document.write("<br>It is armstrong no");
+      } else {
+        document.write("<br>It is not armstrong no");
+      }
+      
+    </script>
+  </body>
+</html>
