@@ -1,0 +1,28 @@
+.box {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  border: 4px solid rgb(45, 240, 84);
+  transition: background-color 0.5s ease;
+}
+
+.spin {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+h2 {
+  background-color: aquamarine;
+  color: black;
+}
+p {
+  background-color: bisque;
+  color: brown;
+}

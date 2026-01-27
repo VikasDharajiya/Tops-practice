@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div id="id"></div>
+
+    <script>
+      let btn = document.createElement("button");
+      let txt = document.createTextNode("Add Data");
+      btn.appendChild(txt);
+
+      document.getElementById("demo").append(btn);
+      btn.addEventListener("click", () => {
+        alert("Button Clicked");
+      });
+
+      let lst = document.createElement("ul");
+      let li1 = document.createElement("li");
+      let li2 = document.createElement("li");
+      let li3 = document.createElement("li");
+      li1.innerText = "abc";
+      li2.innerText = "xyz";
+      li3.innerText = "123";
+
+      lst.appendChild(li1);
+      lst.appendChild(li2);
+      lst.appendChild(li3);
+
+      document.getElementById("id").append(lst);
+    </script>
+  </body>
+</html>

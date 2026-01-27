@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 20;
+      let b = 0;
+
+      try {
+        if (b <= 0) {
+          throw "Division is not possible";
+        } else {
+          document.write("<br> Division is" + a / b);
+        }
+      } catch (e) {
+        document.write("<br> Error is " + e);
+      } finally {
+        document.write("<br> Multiply is " + a * b);
+      }
+    </script>
+  </body>
+</html>
