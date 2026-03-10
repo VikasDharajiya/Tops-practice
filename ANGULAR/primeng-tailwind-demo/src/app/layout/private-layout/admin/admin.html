@@ -1,0 +1,137 @@
+<div class="h-screen bg-slate-950 text-neutral-200 flex">
+  <!-- Sidebar -->
+  <aside class="w-72 bg-slate-950 border-r border-slate-800 flex flex-col">
+    <!-- Logo -->
+    <div class="h-20 flex items-center px-8 border-b border-slate-800">
+      <h1 class="text-xl font-semibold tracking-tight text-white">
+        Nova<span class="text-purple-600">Admin</span>
+      </h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 px-6 py-8 space-y-2">
+      <a
+        routerLink="dashboard"
+        routerLinkActive="bg-slate-900 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-4 px-5 py-3 rounded-xl text-neutral-400 hover:bg-slate-900 hover:text-white transition-all duration-200"
+      >
+        <i class="pi pi-chart-bar text-lg"></i>
+        <span class="font-medium">Dashboard</span>
+      </a>
+
+      <a
+        routerLink="users"
+        routerLinkActive="bg-slate-900 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-4 px-5 py-3 rounded-xl text-neutral-400 hover:bg-slate-900 hover:text-white transition-all duration-200"
+      >
+        <i class="pi pi-users text-lg"></i>
+        <span class="font-medium">Users</span>
+      </a>
+
+      <a
+        routerLink="analytics"
+        routerLinkActive="bg-slate-900 text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-4 px-5 py-3 rounded-xl text-neutral-400 hover:bg-slate-900 hover:text-white transition-all duration-200"
+      >
+        <i class="pi pi-chart-line text-lg"></i>
+        <span class="font-medium">Analytics</span>
+      </a>
+
+      <a
+        routerLink="settings"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="bg-slate-900 text-white"
+        class="flex items-center gap-4 px-5 py-3 rounded-xl text-neutral-400 hover:bg-slate-900 hover:text-white transition-all duration-200"
+      >
+        <i class="pi pi-cog text-lg"></i>
+        <span class="font-medium">Settings</span>
+      </a>
+    </nav>
+
+    <!-- Bottom subtle footer -->
+    <div class="p-6 border-t border-slate-800 text-xs text-neutral-500">v1.0.0</div>
+  </aside>
+
+  <!-- Main -->
+  <div class="flex-1 flex flex-col">
+    <!-- Topbar -->
+    <header
+      class="h-20 bg-slate-950 border-b border-slate-800 flex items-center justify-between px-10"
+    >
+      <h2 class="text-lg font-semibold text-white tracking-tight">Admin Control</h2>
+
+      <!-- Right Side -->
+      <div class="flex items-center gap-8">
+        <!-- Notification -->
+        <div class="relative cursor-pointer group">
+          <!-- <p-overlayBadge value="3" severity="warn">
+            <i
+              class="pi pi-bell text-xl text-neutral-400 hover:text-white transition cursor-pointer"
+            ></i>
+          </p-overlayBadge> -->
+
+          <i class="pi pi-bell text-xl text-neutral-400 group-hover:text-white transition"></i>
+          <span
+            class="absolute -top-1 -right-2 w-4 h-4 bg-purple-700 text-white text-xs flex items-center justify-center rounded-full"
+          >
+            3
+          </span>
+        </div>
+
+        <!-- Profile -->
+        <div class="relative" #profileMenu>
+          <button
+            (click)="toggleProfileMenu()"
+            class="flex items-center gap-4 cursor-pointer group"
+          >
+            <div class="text-right hidden sm:block">
+              <p class="text-sm font-medium text-white">Admin User</p>
+              <p class="text-xs text-neutral-500">Administrator</p>
+            </div>
+
+            <div
+              class="w-10 h-10 rounded-xl bg-purple-700 hover:bg-purple-600 flex items-center justify-center text-white font-semibold group-hover:scale-105 transition"
+            >
+              A
+            </div>
+          </button>
+
+          <!-- Dropdown -->
+          <div
+            *ngIf="isProfileOpen"
+            class="absolute right-0 mt-4 w-48 bg-slate-950 border border-slate-800 rounded-xl shadow-xl overflow-hidden"
+          >
+            <button class="w-full text-left px-4 py-3 hover:bg-slate-900 text-sm transition">
+              Profile
+            </button>
+
+            <button class="w-full text-left px-4 py-3 hover:bg-slate-900 text-sm transition">
+              Settings
+            </button>
+
+            <div class="border-t border-slate-800"></div>
+
+            <button
+              (click)="logout()"
+              class="w-full text-left px-4 py-3 hover:bg-red-600/20 text-red-400 text-sm transition"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <p-toast />
+    <p-confirm-dialog [style]="{ width: '400px' }" [breakpoints]="{ '960px': '90vw' }"
+      >></p-confirm-dialog
+    >
+    <!-- Routed Content -->
+    <main class="flex-1 overflow-auto bg-state-800">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

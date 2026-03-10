@@ -1,0 +1,30 @@
+<div class="border border-gray-200 rounded-xl p-5 bg-gray-100/80 shadow-sm h-full">
+  <div *ngIf="selectedRecipe; else noRecipe">
+    <img
+      [src]="selectedRecipe.imagePath"
+      [alt]="selectedRecipe.name"
+      class="w-full h-64 object-cover rounded-lg mb-4"
+    />
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">
+      {{ selectedRecipe.name }}
+    </h2>
+
+    <p class="text-gray-600 mb-6">
+      {{ selectedRecipe.description }}
+    </p>
+
+    <!-- <div class="flex gap-3">
+      <p-button label="Edit" icon="pi pi-pencil" severity="secondary"></p-button>
+
+      <p-button label="Delete" icon="pi pi-trash" severity="danger"></p-button>
+    </div> -->
+  </div>
+
+  <ng-template #noRecipe>
+    <div class="text-center text-gray-400 py-24">
+      <i class="pi pi-book text-5xl mb-3"></i>
+      <p class="text-lg">Select a recipe to see details</p>
+    </div>
+  </ng-template>
+</div>

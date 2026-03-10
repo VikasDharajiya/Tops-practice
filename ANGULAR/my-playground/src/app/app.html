@@ -1,0 +1,7 @@
+<!-- <app-task-list></app-task-list> -->
+<!-- <div *ngFor="let user of users$ | async">
+  {{ user.name }}
+</div> -->
+@for (user of users$ | async; track user.id) {
+  <div>{{ user.name }}</div>
+}

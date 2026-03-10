@@ -1,0 +1,59 @@
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <div class="flex gap-2 mb-4">
+    <input
+      class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-0"
+      placeholder="Add new task..."
+      type="text"
+      [(ngModel)]="newTaskTitle"
+    />
+    <button
+      class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-200 active:scale-90"
+      (click)="addTask()"
+    >
+      Add
+    </button>
+  </div>
+  <ul class="divide-gray-200 divide-y">
+    <li *ngFor="let task of tasks" class="flex items-center justify-between py-2">
+      <span *ngIf="editTaskId !== task.id" class="text-gray-800">
+        {{ task.title }}
+      </span>
+      <input
+        *ngIf="editTaskId === task.id"
+        type="text"
+        [(ngModel)]="editedTaskTitle"
+        class="border px-2 py-1 rounded"
+      />
+      <button
+        *ngIf="editTaskId === task.id"
+        (click)="saveEdit()"
+        [disabled]="editedTaskTitle.trim() === '' || editedTaskTitle === task.title"
+        class="bg-green-500 hover:bg-green-600 disabled:bg-green-300 disabled:cursor-not-allowed text-white px-2 py-1 rounded text-sm"
+      >
+        Save
+      </button>
+      <button
+        *ngIf="editTaskId === task.id"
+        (click)="cancelEdit()"
+        class="bg-gray-400 hover:bg-gray-500 text-white px-2 py-1 rounded text-sm"
+      >
+        Cancel
+      </button>
+
+      <button
+        *ngIf="editTaskId !== task.id"
+        (click)="startEdit(task)"
+        class="bg-yellow-400 hover:bg-yellow-500 text-white px-2 py-1 rounded text-sm"
+      >
+        Edit
+      </button>
+      <button
+        *ngIf="editTaskId !== task.id"
+        class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-all duration-200 active:scale-90"
+        (click)="deleteTask(task.id)"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

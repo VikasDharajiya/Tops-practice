@@ -1,0 +1,93 @@
+<div class="max-w-sm mx-auto mt-6 p-4 border rounded shadow-lg bg-white text-center">
+  <div *ngIf="!profileService.isEditing">
+    <h3 class="text-lg font-semibold mb-2">{{ profileService.name }}</h3>
+
+    <!-- <input #userName />
+  <button (click)="name = userName.value">Set Name</button> -->
+
+    <h2 class="mb-2">Age : {{ profileService.age }}</h2>
+    <p class="text-gray-600 mb-4 font-semibold">{{ profileService.role }}</p>
+  </div>
+  <div *ngIf="profileService.isEditing" class="space-y-2 mt-3">
+    <input
+      class="border px-2 py-1 rounded w-full"
+      name="name"
+      [(ngModel)]="editedName"
+      placeholder="Enter name"
+    />
+
+    <input
+      class="border px-2 py-1 rounded w-full"
+      [(ngModel)]="editedRole"
+      placeholder="Enter role"
+      name="role"
+    />
+
+    <div class="flex gap-2 justify-center">
+      <button
+        [disabled]="!editedName || !editedRole"
+        (click)="saveProfile()"
+        class="bg-blue-500 disabled:bg-gray-300 text-white px-3 py-1 mb-2 rounded"
+      >
+        Save
+      </button>
+
+      <button (click)="cancelEdit()" class="bg-gray-400 text-white px-3 py-1 rounded mb-2">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <!-- <button
+    (click)="changeRole()"
+    class="bg-blue-500 text-white px-2 py-1 mr-2 rounded hover:bg-blue-600 mb-2 transition"
+  >
+    Change Role
+  </button> -->
+
+  <div class="flex gap-2 justify-center">
+    <button
+      *ngIf="!profileService.isEditing"
+      (click)="startEdit()"
+      class="bg-gray-700 text-white px-3 py-1 rounded mb-2 mr-2"
+    >
+      Edit Profile
+    </button>
+    <button
+      *ngIf="!profileService.isEditing"
+      (click)="profileService.toggleHobbies()"
+      class="bg-gray-700 text-white hover:bg-gray-800 px-3 py-1 rounded mb-2"
+    >
+      Hobby
+    </button>
+  </div>
+  <p *ngIf="profileService.showHobbies" class="text-sm text-gray-600">
+    {{ profileService.hobbies.join(', ') }}
+  </p>
+
+  <ul class="mt-3">
+    <li *ngFor="let skill of profileService.skills" class="border-b py-1 text-sm text-gray-800">
+      {{ skill }}
+      <!-- <button (click)="removeSkill(skill)">❌</button> -->
+    </li>
+  </ul>
+
+  <p [class.text-blue-600]="profileService.isActive" [class.font-bold]="profileService.isActive">
+    Status Text
+  </p>
+
+  <button
+    (click)="profileService.isActive = !profileService.isActive"
+    class="bg-blue-500 text-white px-3 py-1 rounded mt-2"
+  >
+    Toggle Active
+  </button>
+
+  <!-- <p class="text-gray-600 mb-4">{{ hobbies }}</p>
+  <button
+    (click)="addHobbies()"
+    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-4 transition"
+  >
+    Change Role
+  </button> -->
+</div>

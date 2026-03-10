@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
+}
+/* Force LIGHT Menubar (PrimeNG Aura) */
+/* .p-menubar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+} */
+/* 
+.p-menubar p-button {
+  color: #6b94ec;
+} */
+
+/* .p-menubar .p-menuitem-link:hover {
+  background: #f3f4f6;
+} */

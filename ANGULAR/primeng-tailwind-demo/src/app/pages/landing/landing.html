@@ -1,0 +1,388 @@
+<!-- <app-header (openDialog)="openDialog()"></app-header> -->
+
+<!-- Hero Section -->
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-white px-6"
+>
+  <!-- Background Glow Effect -->
+  <div
+    class="absolute w-[600px] h-[600px] bg-purple-500/30 rounded-full blur-3xl -top-40 -left-40 animate-pulse"
+  ></div>
+
+  <div
+    class="absolute w-[500px] h-[500px] bg-indigo-500/30 rounded-full blur-3xl bottom-0 right-0 animate-pulse"
+  ></div>
+
+  <!-- Content Container -->
+  <div class="relative max-w-6xl w-full grid md:grid-cols-2 gap-16 items-center">
+    <!-- Left Content -->
+    <div class="space-y-8 animate-fade-in">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        Design Interfaces
+        <span class="bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
+          That Feel Alive
+        </span>
+      </h1>
+
+      <p class="text-lg text-white/70 max-w-xl">
+        Build scalable, interactive and beautifully crafted applications using the power of PrimeNG
+        components and Tailwind utility layout.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex gap-4">
+        <div class="transition-all duration-300 hover:scale-105">
+          <p-button label="Start Building" size="large" severity="contrast"> </p-button>
+        </div>
+
+        <div class="transition-all transform hover:scale-105 duration-300">
+          <p-button label="Explore Features" [outlined]="true" severity="contrast" size="large">
+          </p-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Glass Card -->
+    <div class="hidden md:block">
+      <div
+        class="bg-white/10 backdrop-blur-2xl p-8 rounded-3xl border border-white/20 shadow-2xl transition hover:scale-105 duration-500"
+      >
+        <h3 class="text-xl font-semibold mb-4">🚀 Modern Stack</h3>
+
+        <ul class="space-y-3 text-white/80">
+          <li>✔ Angular 17+</li>
+          <li>✔ PrimeNG 21+</li>
+          <li>✔ Tailwind CSS</li>
+          <li>✔ Responsive Design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- card-section -->
+
+<section class="relative py-24 bg-gradient-to-b from-slate-900 to-black text-white px-6">
+  <div class="max-w-6xl mx-auto text-center mb-16">
+    <h2 class="text-4xl font-bold mb-4">Powerful Features</h2>
+    <p class="text-white/60 max-w-2xl mx-auto">
+      Everything you need to design and build modern applications with speed and confidence.
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <!-- Card 1 -->
+    <div
+      class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+    >
+      <div
+        class="text-pink-400 text-4xl mb-6 transition-transform duration-500 group-hover:scale-110"
+      >
+        <i class="pi pi-bolt"></i>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+
+      <p class="text-white/60">
+        Optimized components and utility-first styling for rapid development.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div
+      class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+    >
+      <div
+        class="text-indigo-400 text-4xl mb-6 transition-transform duration-500 group-hover:scale-110"
+      >
+        <i class="pi pi-shield"></i>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Secure & Scalable</h3>
+
+      <p class="text-white/60">
+        Built with enterprise-grade architecture and maintainability in mind.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div
+      class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:bg-white/10"
+    >
+      <div
+        class="text-yellow-400 text-4xl mb-6 transition-transform duration-500 group-hover:scale-110"
+      >
+        <i class="pi pi-star"></i>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-3">Beautiful UI</h3>
+
+      <p class="text-white/60">
+        Carefully crafted modern design patterns that feel intuitive and alive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- how it work -->
+
+<section class="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <!-- Title -->
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h2>
+    <p class="text-gray-400 mb-16 max-w-2xl mx-auto">
+      Get started in just three simple steps and unlock powerful tools to grow your productivity.
+    </p>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Step 1 -->
+      <div
+        class="p-8 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:scale-105 transition duration-300"
+      >
+        <!-- conversation block -->
+
+        <div class="text-5xl font-bold text-purple-500 mb-4">01</div>
+        <h3 class="text-xl font-semibold mb-3">Create Account</h3>
+        <p class="text-gray-400 text-sm">
+          Sign up in seconds and set up your profile to begin your journey.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div
+        class="p-8 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:scale-105 transition duration-300"
+      >
+        <div class="text-5xl font-bold text-purple-500 mb-4">02</div>
+        <h3 class="text-xl font-semibold mb-3">Customize Dashboard</h3>
+        <p class="text-gray-400 text-sm">
+          Personalize your workspace to match your workflow and preferences.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div
+        class="p-8 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:scale-105 transition duration-300"
+      >
+        <div class="text-5xl font-bold text-purple-500 mb-4">03</div>
+        <h3 class="text-xl font-semibold mb-3">Track & Grow</h3>
+        <p class="text-gray-400 text-sm">
+          Monitor progress, gain insights, and scale your productivity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- conversation block -->
+
+<section class="py-24 bg-gray-950 text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div
+      class="p-12 rounded-3xl bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-white/10 backdrop-blur-lg"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+
+      <p class="text-gray-400 mb-10 max-w-2xl mx-auto">
+        Join thousands of users who are already transforming their workflow with our platform.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <!-- Primary -->
+        <button
+          class="px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition duration-300 font-semibold shadow-lg"
+          (click)="openDialog()"
+        >
+          Get Started
+        </button>
+
+        <!-- Secondary -->
+        <button
+          class="px-8 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition duration-300 font-semibold"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- features -->
+<section id="features" class="py-24 bg-gradient-to-b from-gray-900 to-black text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Powerful Features Built for You</h2>
+
+    <p class="text-gray-400 max-w-2xl mx-auto mb-16">
+      Everything you need to build, launch, and scale your ideas faster than ever.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Feature Card 1 -->
+      <div
+        class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500 transition"
+      >
+        <div class="text-purple-400 text-3xl mb-4">⚡</div>
+        <h3 class="text-xl font-semibold mb-3">Fast Performance</h3>
+        <p class="text-gray-400">
+          Optimized structure ensures lightning-fast load times and smooth interactions.
+        </p>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div
+        class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500 transition"
+      >
+        <div class="text-purple-400 text-3xl mb-4">🎨</div>
+        <h3 class="text-xl font-semibold mb-3">Modern Design</h3>
+        <p class="text-gray-400">
+          Clean UI with consistent spacing and responsive layouts across all devices.
+        </p>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div
+        class="bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-500 transition"
+      >
+        <div class="text-purple-400 text-3xl mb-4">🔒</div>
+        <h3 class="text-xl font-semibold mb-3">Secure & Reliable</h3>
+        <p class="text-gray-400">
+          Built with best practices to keep your data safe and your app stable.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section id="about" class="py-24 bg-black text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-8">About This Project</h2>
+
+    <p class="text-gray-400 leading-relaxed text-lg">
+      This project is built as part of a learning journey to master modern frontend development. It
+      focuses on clean architecture, responsive design, and scalable UI structure. Every component
+      is crafted to improve practical skills while building something real.
+    </p>
+
+    <div class="mt-10">
+      <a
+        href="#features"
+        class="inline-block bg-purple-600 hover:bg-purple-700 transition px-8 py-3 rounded-full font-medium"
+      >
+        Explore Features
+      </a>
+    </div>
+  </div>
+</section>
+
+<p-scrollTop
+  threshold="200"
+  icon="pi pi-arrow-up"
+  behavior="smooth"
+  styleClass="!fixed !bottom-6 !right-6 !bg-white !text-gray-800 !rounded-full !p-4 !shadow-lg hover:!scale-110 hover:!bg-gray-100 !transition-all !border-gray-400"
+/>
+<!-- dialog -->
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [style]="{ width: '420px' }"
+  [header]="isLoginMode ? 'Login' : 'Create Account'"
+>
+  <div class="space-y-5 mt-4">
+    <!-- Name Field (Only Register) -->
+    <div *ngIf="!isLoginMode">
+      <label class="block text-sm mb-2">Full Name</label>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="name"
+        required
+        class="w-full px-1 text-black/80 rounded focus:outline-none focus:ring-2 ring-purple-400"
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label class="block text-sm mb-2">Email</label>
+      <input
+        type="email"
+        pInputText
+        [(ngModel)]="email"
+        required
+        class="w-full px-1 text-black/80 rounded focus:outline-none focus:ring-2 ring-purple-400"
+      />
+    </div>
+
+    <!-- Password -->
+    <div class="relative">
+      <label class="block text-sm mb-2">Password</label>
+      <input
+        [type]="passwordVisible ? 'text' : 'password'"
+        pInputText
+        [(ngModel)]="password"
+        required
+        class="w-full px-1 text-black/80 rounded focus:outline-none focus:ring-2 ring-purple-400"
+      />
+      <i
+        class="pi absolute right-3 top-[33px] cursor-pointer text-gray-400 hover:text-purple-400"
+        [ngClass]="passwordVisible ? 'pi-eye' : 'pi-eye-slash'"
+        (click)="togglePassword()"
+      >
+      </i>
+    </div>
+
+    <!-- Confirm Password (Register Only) -->
+    <div *ngIf="!isLoginMode" class="">
+      <label class="block text-sm mb-2">Confirm Password</label>
+      <input
+        [type]="passwordVisible ? 'text' : 'password'"
+        pInputText
+        [(ngModel)]="confirmPassword"
+        required
+        class="w-full px-1 text-black/80 rounded focus:outline-none focus:ring-2 ring-purple-400"
+      />
+      <p
+        *ngIf="!isLoginMode && confirmPassword && password !== confirmPassword"
+        class="text-red-400 text-xs mt-2"
+      >
+        Passwords do not match
+      </p>
+
+      <!-- <i
+        class="pi absolute right-3 top-[33px] cursor-pointer text-gray-400 hover:text-purple-400"
+        [ngClass]="passwordVisible ? 'pi-eye-slash' : 'pi-eye'"
+        (click)="togglePassword()"
+      >
+      </i> -->
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      pButton
+      [label]="isLoginMode ? 'Login' : 'Register'"
+      class="w-full mt-4 purple-btn"
+      [disabled]="isFormInvalid"
+      (click)="submit()"
+    ></button>
+
+    <!-- Toggle Mode -->
+    <div class="text-center text-sm mt-4 text-gray-400">
+      <span *ngIf="isLoginMode">
+        Don't have an account?
+        <span class="text-purple-400 cursor-pointer hover:underline" (click)="toggleMode()"
+          >Register</span
+        >
+      </span>
+
+      <span *ngIf="!isLoginMode">
+        Already have an account?
+        <span class="text-purple-400 cursor-pointer hover:underline" (click)="toggleMode()"
+          >Login</span
+        >
+      </span>
+    </div>
+  </div>
+</p-dialog>

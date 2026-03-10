@@ -1,0 +1,14 @@
+<!-- <p-card header="Recipes"> -->
+<div class="bg-gray-200 p-4 rounded">
+  <h3 class="font-semibold text-2xl mb-2">Recipes</h3>
+
+  <hr class="max-w-full mx-auto h-2 border-0 mb-2 bg-gray-300 rounded-sm" />
+  <div class="grid grid-cols-2 gap-4">
+    <app-recipe-list
+      (recipeSelected)="onRecipeSelected($event)"
+      (recipeDeleted)="onDelete($event)"
+    ></app-recipe-list>
+    <app-recipe-detail [selectedRecipe]="selectedRecipe"></app-recipe-detail>
+  </div>
+</div>
+<!-- </p-card> -->

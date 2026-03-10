@@ -1,0 +1,36 @@
+<div class="p-4 space-y-4">
+  <!-- <hr class="w-full mx-auto h-2 border-0 border-gray-300 bg-gray-300 rounded" /> -->
+
+  <ul class="space-y-2">
+    <li
+      *ngFor="let ingredient of ingredients; let i = index"
+      class="flex items-center justify-between border-gray-300 p-3 border rounded-lg hover:bg-gray-100/80 transition-colors duration-150"
+    >
+      <div>
+        <h4 class="font-medium text-gray-800">
+          {{ ingredient.name }}
+        </h4>
+        <p class="text-sm text-gray-500">Amount: {{ ingredient.amount }}</p>
+      </div>
+
+      <div class="flex gap-2">
+        <p-button
+          label="Edit"
+          variant="text"
+          [raised]="true"
+          severity="info"
+          (onClick)="onEdit(i)"
+        />
+
+        <p-button
+          label="Delete"
+          variant="text"
+          [raised]="true"
+          severity="danger"
+          (onClick)="onDelete(i)"
+        />
+      </div>
+    </li>
+  </ul>
+  <app-shopping-edit></app-shopping-edit>
+</div>

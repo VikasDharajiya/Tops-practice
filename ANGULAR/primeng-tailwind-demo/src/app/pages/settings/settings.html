@@ -1,0 +1,58 @@
+<div class="p-6 bg-slate-950 min-h-full text-white">
+  <!-- Header -->
+  <div class="mb-8">
+    <h1 class="text-2xl font-semibold">Settings</h1>
+    <p class="text-slate-400 text-sm">Manage your account preferences</p>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+    <!-- Profile Settings -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+      <h2 class="text-lg font-semibold mb-4">Profile Information</h2>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Full Name</label>
+          <input pInputText type="text" class="w-full" />
+        </div>
+
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Email</label>
+          <input pInputText type="email" class="w-full" />
+        </div>
+
+        <div>
+          <label class="block text-sm text-slate-400 mb-1">Role</label>
+          <!-- <p-dropdown [options]="roles" placeholder="Select Role" class="w-full"></p-dropdown> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Preferences -->
+    <!-- <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+      <h2 class="text-lg font-semibold mb-4">Preferences</h2>
+
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <span>Email Notifications</span>
+          <p-inputSwitch [(ngModel)]="settings.emailNotifications"></p-inputSwitch>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <span>SMS Alerts</span>
+          <p-inputSwitch [(ngModel)]="settings.smsAlerts"></p-inputSwitch>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <span>Dark Mode</span>
+          <p-inputSwitch [(ngModel)]="settings.darkMode"></p-inputSwitch>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- Save Button -->
+  <div class="mt-8">
+    <button pButton label="Save Changes" icon="pi pi-check" class="p-button-help"></button>
+  </div>
+</div>

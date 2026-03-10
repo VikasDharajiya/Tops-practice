@@ -1,0 +1,85 @@
+<!-- <form class="bg-gray-50 p-6 rounded-2xl space-y-5 max-w-md">
+  <div class="flex flex-col gap-2">
+    <label class="text-sm text-gray-400">Name</label>
+    <input pInputText />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label class="text-sm text-gray-400">Email</label>
+    <input pInputText />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label class="text-sm text-gray-400">Role</label>
+    <p-select [options]="roles" styleClass="w-full rounded-lg"></p-select>
+  </div>
+
+  <p-button
+    label="Save User"
+    styleClass="!bg-indigo-600 !border-none !rounded-xl !px-6 !py-3 shadow-lg"
+  >
+  </p-button>
+</form> -->
+
+<!-- <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+  <input
+    type="text"
+    name="username"
+    placeholder="Enter name"
+    ngModel
+    required
+    email
+    #emailRef="ngModel"
+  />
+  <div *ngIf="emailRef.invalid && emailRef.touched">Invalid Email</div>
+
+  <button type="submit">Submit</button>
+</form> -->
+
+<!-- reactiveForm -->
+
+<!-- <form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+  class="bg-gray-50 p-6 rounded-2xl max-w-md space-y-2"
+>
+  <div class="flex flex-col">
+    <label class="p-2">Name</label>
+    <input pInputText type="text" formControlName="username" placeholder="Username" />
+
+    <small class="text-red-600" *ngIf="f.username.touched && f.username.errors?.['required']">
+      Username is required
+    </small>
+
+    <small class="text-red-600" *ngIf="f.username.touched && f.username.errors?.['minlength']">
+      Minimum 3 characters required
+    </small>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="p-2">Email</label>
+    <input pInputText type="email" formControlName="email" placeholder="Email" />
+
+    <small class="text-red-600" *ngIf="f.email.touched && f.email.errors?.['email']">
+      Invalid email format
+    </small>
+  </div>
+
+  <div class="flex flex-col">
+    <label class="p-2">Password</label>
+    <input pInputText type="password" formControlName="password" placeholder="Password" />
+
+    <small class="text-red-600" *ngIf="f.password.touched && f.password.errors?.['minlength']">
+      Minimum 6 characters required
+    </small>
+  </div>
+
+  <p-button
+    label="Register"
+    type="submit"
+    [disabled]="registerForm.invalid"
+    styleClass="!bg-green-500 !border-none !rounded-xl !px-6 !py-3 shadow-lg"
+  ></p-button>
+</form> -->
+
+<router-outlet></router-outlet>

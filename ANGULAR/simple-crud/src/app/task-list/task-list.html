@@ -1,0 +1,82 @@
+<div class="max-w-md mx-auto mt-8 p-6 bg-white rounded-xl shadow-md">
+  <!-- Add New Task -->
+  <div class="flex gap-2 mb-4">
+    <input
+      type="text"
+      placeholder="Add new task..."
+      [(ngModel)]="newTaskTitle"
+      class="flex-1 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button
+      (click)="addTask()"
+      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+    >
+      Add
+    </button>
+  </div>
+
+  <!-- Task List -->
+  <ul class="divide-y divide-gray-200">
+    <li *ngFor="let task of tasks" class="flex items-center justify-between py-2">
+      <!-- Task Title / Edit Input -->
+      <div class="flex items-center gap-2">
+        <input
+          type="checkbox"
+          [(ngModel)]="task.completed"
+          (change)="toggleTask(task.id)"
+          class="w-4 h-4 accent-blue-600"
+        />
+
+        <input
+          *ngIf="editedTaskId === task.id"
+          type="text"
+          [(ngModel)]="editedTaskTitle"
+          class="border px-2 py-1 rounded"
+        />
+
+        <span
+          *ngIf="editedTaskId !== task.id"
+          [class.line-through]="task.completed"
+          [class.text-gray-400]="task.completed"
+          class="text-gray-800"
+        >
+          {{ task.title }}
+        </span>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex gap-2">
+        <button
+          *ngIf="editedTaskId === task.id"
+          (click)="saveEdit()"
+          [disabled]="editedTaskTitle.trim() === '' || editedTaskTitle === task.title"
+          class="bg-green-500 hover:bg-green-600 disabled:bg-green-300 disabled:cursor-not-allowed text-white px-2 py-1 rounded text-sm"
+        >
+          Save
+        </button>
+        <button
+          *ngIf="editedTaskId === task.id"
+          (click)="cancelEdit()"
+          class="bg-gray-400 hover:bg-gray-500 text-white px-2 py-1 rounded text-sm"
+        >
+          Cancel
+        </button>
+
+        <button
+          *ngIf="editedTaskId !== task.id"
+          (click)="startEdit(task)"
+          class="bg-yellow-400 hover:bg-yellow-500 text-white px-2 py-1 rounded text-sm"
+        >
+          Edit
+        </button>
+        <button
+          *ngIf="editedTaskId !== task.id"
+          (click)="deleteTask(task.id)"
+          class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-sm"
+        >
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

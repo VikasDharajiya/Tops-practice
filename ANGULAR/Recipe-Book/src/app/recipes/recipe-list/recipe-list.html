@@ -1,0 +1,53 @@
+<div class="mb-4 flex justify-between items-center">
+  <h2 class="text-lg font-semibold">Recipe List</h2>
+  <p-button
+    label="Add Recipe"
+    icon="pi pi-plus"
+    variant="text"
+    [raised]="true"
+    severity="success"
+    (onClick)="addRecipe()"
+    (onClick)="addRecipeBtn = !addRecipeBtn"
+  >
+  </p-button>
+</div>
+<div *ngIf="addRecipeBtn" class="mb-4 p-4 border border-gray-200 rounded shadow-sm bg-gray-200">
+  <h3 class="text-lg font-semibold mb-2">Add Recipe</h3>
+  <input
+    type="text"
+    [(ngModel)]="newRecipeName"
+    placeholder="Recipe Name"
+    class="w-full p-2 border-gray-300 border rounded focus:outline-none focus:ring focus:ring-green-300 mb-2"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newRecipeDiscription"
+    placeholder="Recipe Description"
+    class="w-full p-2 border-gray-300 border rounded focus:outline-none focus:ring focus:ring-green-300 mb-2"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newRecipeImage"
+    placeholder="Image URL"
+    class="w-full p-2 border-gray-300 border rounded focus:outline-none focus:ring focus:ring-green-300 mb-2"
+  />
+  <button
+    (click)="addRecipe()"
+    class="bg-green-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-green-600"
+  >
+    Add Recipe
+  </button>
+</div>
+
+<ul class="space-y-2">
+  <li *ngFor="let recipe of recipes; let i = index">
+    <app-recipe-item
+      [recipe]="recipe"
+      [index]="i"
+      (recipeSelected)="onRecipeSelected($event)"
+      (recipeDeleted)="onRecipeDeleted($event)"
+    >
+      ></app-recipe-item
+    >
+  </li>
+</ul>

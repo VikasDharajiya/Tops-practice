@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<header
+  class="fixed top-0 w-full z-50 backdrop-blur-xl bg-gradient-to-r from-indigo-900/60 via-purple-900/60 to-slate-900/60 border-b border-white/10"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-white">
+    <!-- Logo -->
+    <div
+      class="text-2xl font-bold tracking-wide bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent"
+    >
+      NovaUI
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="hidden md:flex gap-8 text-sm font-medium text-white/70">
+      <a
+        routerLink="/"
+        routerLinkActive="bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent "
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-pink-300 transition-all duration-300"
+        >Home</a
+      >
+      <a
+        [routerLink]="[]"
+        fragment="features"
+        class="hover:text-pink-300 transition-all duration-300"
+        >Features</a
+      >
+      <!-- <a
+        routerLink="/dashboard"
+        routerLinkActive="bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-pink-300 transition-all duration-300"
+        >Dashboard</a
+      > -->
+      <a [routerLink]="[]" fragment="about" class="hover:text-pink-300 transition-all duration-300"
+        >About</a
+      >
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="gap-2 flex">
+      <p-button label="Sign In" size="small" severity="contrast" (onClick)="openDialog()">
+      </p-button>
+      <p-button
+        size="small"
+        label="Admin"
+        routerLink="/admin-login"
+        [raised]="true"
+        severity="help"
+      />
+    </div>
+  </div>
+</header>
+<!-- <div class="h-24"></div> -->
