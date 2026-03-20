@@ -1,18 +1,20 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+// import { RouterOutlet } from '@angular/router';
 import { TaskList } from './task-list/task-list';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Observable, tap } from 'rxjs';
+// import { Observable } from 'rxjs';
+// import { ApiTestService } from './services/api-test.service';
+import { RouterModule } from '@angular/router';
+import { List } from './list/list';
 
 @Component({
   selector: 'app-root',
-  imports: [TaskList, CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnInit {
-  users$!: Observable<any[]>;
+export class App {
   // constructor(private http: HttpClient) {
   //   const data = this.http
   //     .get<any[]>('https://jsonplaceholder.typicode.com/users')
@@ -22,13 +24,13 @@ export class App implements OnInit {
   //     });
   //   // console.log(data);
   // }
-  constructor(private http: HttpClient) {}
-  ngOnInit() {
-    this.users$ = this.http.get<any[]>('https://jsonplaceholder.typicode.com/users').pipe(
-      tap((users) => {
-        console.log('user names:');
-        users.forEach((user) => console.log(user.name));
-      }),
-    );
-  }
+  // constructor(private http: HttpClient) {}
+  // ngOnInit() {
+  //   this.users$ = this.http.get<any[]>('https://jsonplaceholder.typicode.com/users').pipe(
+  //     tap((users) => {
+  //       console.log('user names:');
+  //       users.forEach((user) => console.log(user.name));
+  //     }),
+  //   );
+  // }
 }

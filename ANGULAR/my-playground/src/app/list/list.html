@@ -1,0 +1,51 @@
+<div class="min-h-screen bg-gray-50 p-6">
+  @if (users$ | async; as users) {
+    <h2 class="font-semibold text-2xl py-3 text-center border-b">User</h2>
+    <ul class="">
+      @for (user of users; track user.id) {
+        <li class="border-b border-gray-200 p-2 hover:bg-gray-100">
+          <h2 class="font-semibold">{{ user.name }}</h2>
+          <p>Email: {{ user.email }}</p>
+          <p>City: {{ user.address.city }}</p>
+          <p>{{ user.displayName }}</p>
+        </li>
+      }
+    </ul>
+  } @else {
+    <div class="flex justify-center py-10">
+      <div
+        class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+  }
+
+  <h2 class="font-semibold text-2xl py-10 text-center border-t">Posts Table</h2>
+
+  <table class="w-full border border-gray-200">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="p-2 text-left">Id</th>
+        <th class="p-2 text-left">Title</th>
+        <th class="p-2 text-left">Body</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (post of posts$ | async; track post.id) {
+        <tr class="hover:bg-gray-100 border-t border-gray-300">
+          <td class="p-2">{{ post.id }}</td>
+          <td class="p-2">{{ post.title }}</td>
+          <td class="p-2">{{ post.body }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- <ul class="bg-cyan-50">
+    @for (post of posts$ | async; track post.id) {
+      <li class="border-b border-gray-200 p-2 hover:bg-gray-100">
+        <p>{{ post.id }}</p>
+      </li>
+    }
+  </ul> -->
+</div>

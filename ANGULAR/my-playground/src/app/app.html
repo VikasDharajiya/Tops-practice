@@ -2,6 +2,9 @@
 <!-- <div *ngFor="let user of users$ | async">
   {{ user.name }}
 </div> -->
-@for (user of users$ | async; track user.id) {
+
+<!-- @for (user of users$ | async; track user.id) {
   <div>{{ user.name }}</div>
-}
+} -->
+
+<router-outlet></router-outlet>
