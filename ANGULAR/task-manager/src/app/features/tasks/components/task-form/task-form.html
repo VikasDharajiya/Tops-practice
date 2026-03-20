@@ -1,0 +1,52 @@
+<div class="bg-white p-4 shadow rounded w-xl my-4">
+  <h3 class="text-lg font-semibold mb-4">Add Task</h3>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Title -->
+    <input
+      [(ngModel)]="task.title"
+      type="text"
+      placeholder="Title"
+      class="border p-2 w-full mb-2"
+    />
+
+    <!-- Description -->
+    <input
+      [(ngModel)]="task.description"
+      type="text"
+      placeholder="Description"
+      class="border p-2 w-full mb-2"
+    />
+
+    <!-- Status -->
+    <select [(ngModel)]="task.status" name="status" class="border p-2 w-full mb-2">
+      <option value="pending">Pending</option>
+      <option value="in-progress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+
+    <!-- Priority -->
+    <select [(ngModel)]="task.priority" name="priority" class="border p-2 w-full mb-2">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <!-- Assigned -->
+    <input
+      [(ngModel)]="task.assignedTo"
+      type="text"
+      placeholder="Assigned To"
+      class="border p-2 w-full mb-2"
+    />
+
+    <div class="flex gap-2">
+      <button class="bg-green-500 text-white px-4 py-2 rounded w-full">Save</button>
+      <button class="bg-gray-100 text px-4 py-2 rounded w-full" type="button" (click)="close()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+
+<!--  start from sttep 7 -->

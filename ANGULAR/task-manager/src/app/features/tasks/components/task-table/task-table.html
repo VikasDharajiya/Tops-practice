@@ -1,0 +1,23 @@
+<table class="w-full bg-white shadow rounded">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="p-2 text-left">Title</th>
+      <th class="p-2 text-left">Stauts</th>
+      <th class="p-2 text-left">Assigned</th>
+      <th class="p-2 text-left">Description</th>
+      <th class="p-2 text-left">Priority</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (task of tasks; track task.id) {
+      <tr class="border-t">
+        <td class="p2">{{ task.title }}</td>
+        <td class="p2">{{ task.status }}</td>
+        <td class="p2">{{ task.assignedTo }}</td>
+        <td class="p2">{{ task.description }}</td>
+        <td class="p2">{{ task.priority }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
