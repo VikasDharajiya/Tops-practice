@@ -1,4 +1,4 @@
-<table class="w-full bg-white shadow rounded">
+<table class="w-full bg-white shadow rounded overflow-hidden">
   <thead class="bg-gray-200">
     <tr>
       <th class="p-2 text-left">Title</th>
@@ -12,11 +12,11 @@
   <tbody>
     @for (task of tasks; track task.id) {
       <tr class="border-t">
-        <td class="p2">{{ task.title }}</td>
-        <td class="p2">{{ task.status }}</td>
-        <td class="p2">{{ task.assignedTo }}</td>
-        <td class="p2">{{ task.description }}</td>
-        <td class="p2">{{ task.priority }}</td>
+        <td class="p-2">{{ task.title }}</td>
+        <td class="p-2">{{ task.status }}</td>
+        <td class="p-2">{{ task.assignedTo }}</td>
+        <td class="p-2">{{ task.description }}</td>
+        <td class="p-2">{{ task.priority }}</td>
       </tr>
     }
   </tbody>

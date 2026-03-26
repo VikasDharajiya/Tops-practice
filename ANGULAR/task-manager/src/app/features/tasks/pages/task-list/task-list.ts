@@ -1,42 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Task } from '../../models/task.model';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { TaskTable } from '../../components/task-table/task-table';
 import { TaskForm } from '../../components/task-form/task-form';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-list',
-  imports: [CommonModule, TaskTable, TaskForm],
+  imports: [CommonModule, TaskTable, TaskForm, AsyncPipe],
   templateUrl: './task-list.html',
   styleUrl: './task-list.css',
 })
 export class TaskList {
-  tasks: Task[] = [
-    {
-      id: 1,
-      title: 'Learn Angular',
-      description: 'Understand basics',
-      status: 'pending',
-      assignedTo: 'Vikas',
-      priority: 'low',
-    },
-    {
-      id: 2,
-      title: 'Build Project',
-      description: 'Task manager app',
-      status: 'in-progress',
-      assignedTo: 'John',
-      priority: 'medium',
-    },
-    {
-      id: 3,
-      title: 'diployed Project',
-      description: 'Task manager app',
-      status: 'done',
-      assignedTo: 'John',
-      priority: 'high',
-    },
-  ];
+  private taskservice = inject(TaskService);
+
+  tasks$ = this.taskservice.tasks$;
+  loading$ = this.taskservice.loading$;
+  error$ = this.taskservice.error$;
+
+  tasks: Task[] = [];
+
+  ngOnInit() {
+    // this.tasks = this.taskservice.getTasks();
+    this.taskservice.loadTask();
+  }
 
   isFormOpen = false;
+
+  handleAddTask(newTask: Omit<Task, 'id'>) {
+    const task: Task = {
+      id: this.tasks.length + 1,
+      ...newTask,
+    };
+
+    this.taskservice.addTask(task);
+
+    // this.tasks = this.taskservice.getTasks();
+    this.isFormOpen = false;
+  }
+
+  reloadTasks() {
+    this.taskservice.loadTask();
+  }
 }

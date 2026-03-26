@@ -6,8 +6,49 @@
   </button>
 </div>
 
-<app-task-table [tasks]="tasks"></app-task-table>
+<!-- Loading -->
+@if (loading$ | async) {
+  <div class="flex flex-col items-center justify-center py-40 space-y-4">
+    <!-- Spinner -->
+    <div
+      class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+    ></div>
+
+    <!-- Text -->
+    <p class="text-gray-600 font-medium">Loading tasks...</p>
+
+    <!-- Skeleton rows -->
+    <!-- <div class="w-full max-w-3xl space-y-2 mt-4">
+      <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+      <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+      <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+      <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+      <div class="h-4 bg-gray-200 rounded animate-pulse"></div>
+    </div> -->
+  </div>
+}
+
+@if (!(loading$ | async)) {
+  <app-task-table [tasks]="(tasks$ | async) || []"></app-task-table>
+}
+
+<!-- Error -->
+<div *ngIf="error$ | async as error" class="flex justify-center mt-6">
+  <div
+    class="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-lg shadow-sm max-w-md w-full text-center"
+  >
+    <p class="font-semibold mb-2">⚠️ Something went wrong</p>
+    <p class="text-sm mb-4">{{ error }}</p>
+
+    <button
+      class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition"
+      (click)="reloadTasks()"
+    >
+      Retry
+    </button>
+  </div>
+</div>
 
 @if (isFormOpen) {
-  <app-task-form (closeForm)="isFormOpen = false"></app-task-form>
+  <app-task-form (addTask)="handleAddTask($event)" (closeForm)="isFormOpen = false"></app-task-form>
 }
